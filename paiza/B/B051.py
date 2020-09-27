@@ -1,12 +1,8 @@
 import numpy as np
 
 
-def get_lines_for_int(n):
-    """
-    get_lines は引数に渡した数値行分だけリストにして取得する
-    :param n: int
-    :return: List[List[int]]
-    """
+def get_lines_for_int():
+    n = int(input())
     m = []
     for _ in range(n):
         list_str = input().split()
@@ -18,17 +14,12 @@ def get_lines_for_int(n):
 
 
 def print_two_dimensional_list(lines):
-    """
-    print_two_dimensional_list は二次元配列を出力する
-    :param lines: List[List[any]]
-    :return: None (print)
-    """
     for line in lines:
         line = map(str, line)
         print(' '.join(line))
 
 
-m = get_lines_for_int(int(input()))
+m = get_lines_for_int()
 
 total = 0
 for m_line in m:
