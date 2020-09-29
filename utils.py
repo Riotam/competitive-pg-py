@@ -1,3 +1,16 @@
+def get_lines(n):
+    """
+    get_lines は引数に与えられた値の行数だけ、標準入力を取得する
+    :param n: int
+    :return: List[List[str]]
+    """
+    m = []
+    for _ in range(n):
+        line = input()
+        m.append(line)
+    return m
+
+
 def get_lines_by_first_line():
     """
     get_lines_by_first_line は1行目に与えられた標準入力の値を行数として、2行目以降の標準入力を文字列のリストにして取得する
