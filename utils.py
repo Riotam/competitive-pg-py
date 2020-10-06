@@ -37,9 +37,27 @@ def cast_int_for_two_dimensional_list(m):
     return m_int
 
 
+def print_list(results):
+    """
+    print_list はリストを結合して一列の文字列にして下記のように出力する
+    ```
+    1 2 3 4 5
+    ```
+    :param results: List[any]
+    :return: None (print)
+    """
+    list_str = [str(i) for i in results]
+    print(' '.join(list_str))
+
+
 def print_two_dimensional_list(lines):
     """
-    print_two_dimensional_list は二次元配列を出力する
+    print_two_dimensional_list は二次元配列を下記のように出力する
+    ```
+    1 2 3
+    4 5 6
+    7 8 9
+    ```
     :param lines: List[List[any]]
     :return: None (print)
     """
