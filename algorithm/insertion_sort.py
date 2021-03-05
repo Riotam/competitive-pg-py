@@ -1,23 +1,31 @@
-def insertion_sort(target_list: list) -> list:
+from typing import List
+import random
 
-    s = 1  # 先頭の要素は、既に処理済みからスタート
-    while s < len(target_list):
-        hold = target_list[s]
 
-        k = s - 1  # 対象の要素の1つ前の要素から前は、既に処理済み
-        # 対象の要素と処理済みの要素達を比べ、対象要素が大きければ入れ替え
-        # また、対象要素が先頭になるとループから抜ける
-        while target_list[k] < hold and k >= 0:
-            # 入れ替え
-            target_list[k + 1] = target_list[k]
-            target_list[k] = hold
+def insertion_sort(number_list: List[int]) -> List[int]:
+    """
+    計算量 ave: O(n**2), best: O(n), worst: O(n**2)
+    安定ソート
+    隣同士の要素を比較し、大きい方を右に、小さい方を適切な位置までもっていく
+    :param number_list:
+    :return:
+    """
 
-            k -= 1
+    for i in range(1, len(number_list)):
 
-        s += 1
+        temp = number_list[i]
+        j = i - 1
 
-    return target_list
+        while j >= 0 and number_list[j] > temp:
+            number_list[j + 1] = number_list[j]
+            j -= 1
 
-target_list = [20, 30, 10, 40, 50]
-res = insertion_sort(target_list)
-print(res)
+        number_list[j + 1] = temp
+
+    return number_list
+
+
+if __name__ == '__main__':
+    numbers = [random.randint(10, 1000) for _ in range(10)]
+    res = insertion_sort(numbers)
+    print(res)
